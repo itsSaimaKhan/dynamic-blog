@@ -34,35 +34,39 @@ export default function Navbar() {
         </div>
 
         <div className="hidden sm:flex">
-        <ul className="flex space-x-8 text-lg text-gray-700 font-medium">
-          <li>
-            <Link href={"/"}>Home</Link>
-          </li>
-          <li>
-            <Link href={"/about"}>About</Link>
-          </li>
-          <li>
-            <Link href={"/blog"}>Blog</Link>
-          </li>
-          <li>
-            <Link href={"/contact"}>Contact</Link>
-          </li>
-        </ul>
-      </div>
+          <ul className="flex space-x-8 text-lg text-gray-700 font-medium">
+            <li>
+              <Link href={"/"}>Home</Link>
+            </li>
+            <li>
+              <Link href={"/about"}>About</Link>
+            </li>
+            <li>
+              <Link href={"/blog"}>Blog</Link>
+            </li>
+            <li>
+              <Link href={"/contact"}>Contact</Link>
+            </li>
+          </ul>
+        </div>
 
-        <button className="inline-flex items-center bg-gray-700 border-0 py-1 px-3 focus:outline-none hover:bg-gray-500 rounded text-white mt-4 md:mt-0 transition-colors duration-300">
+        {/* Add space between "Contact" and "GitHub" button */}
+        <div className="mt-4 md:mt-0 md:ml-4">
+          <button className="inline-flex items-center bg-gray-700 border-0 py-3 px-4 focus:outline-none hover:bg-gray-500 rounded text-white transition-colors duration-300">
             GitHub
             <svg
-             fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              className="w-4 h-4 ml-1"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-        </button>
+          </button>
+        </div>
       </div>
     </header>
   );

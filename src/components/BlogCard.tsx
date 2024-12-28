@@ -1,6 +1,64 @@
-import React from 'react';
+// import React from 'react';
+// import { Card, CardContent, CardTitle } from "../components/ui/card";
+// import Image from 'next/image';
+
+// interface BlogCardProps {
+//   post: {
+//     id: string;
+//     title: string;
+//     description: string;
+//     date: string;
+//     imageUrl: string;
+//   };
+//   isDarkBackground: boolean;
+// }
+
+// export default function BlogCard({ post, isDarkBackground }: BlogCardProps) {
+//   return (
+//     <Card
+//       className={`p-4 ${
+//         isDarkBackground ? 'bg-slate-800 text-white' : 'bg-white text-slate-800'
+//       } rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300`}
+//     >
+//       <Image
+//         src={post.imageUrl}
+//         alt={post.title}
+//         className="w-full h-48 object-cover rounded-t-lg"
+//       />
+
+//       <CardTitle className="text-xl font-normal mt-4 text-center">
+//         {post.title}
+//       </CardTitle>
+
+//       <CardContent className="text-center mt-2">
+//         <p>{post.description}</p>
+//       </CardContent>
+
+//       <div className="flex flex-col items-center mt-4">
+//         <p
+//           className={`text-sm mb-2 ${
+//             isDarkBackground ? 'text-slate-400' : 'text-slate-600'
+//           }`}
+//         >
+//           Published on: {new Date(post.date).toLocaleDateString()}
+//         </p>
+//         <a
+//           href={`/posts/${post.id}`}
+//           className={`w-full px-6 py-2 rounded   hover:bg-blue-500 ${
+//             isDarkBackground
+//               ? 'bg-blue-600 text-white flex items-center justify-center'
+//               : 'bg-blue-600 text-white flex items-center justify-center'
+//           }`}
+//         >
+//           Read More
+//         </a>
+//       </div>
+//     </Card>
+//   );
+// }
+import React from "react";
 import { Card, CardContent, CardTitle } from "../components/ui/card";
-import Image from 'next/image';
+import Image from "next/image";
 
 interface BlogCardProps {
   post: {
@@ -17,14 +75,18 @@ export default function BlogCard({ post, isDarkBackground }: BlogCardProps) {
   return (
     <Card
       className={`p-4 ${
-        isDarkBackground ? 'bg-slate-800 text-white' : 'bg-white text-slate-800'
-      } rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300`}
+        isDarkBackground ? "bg-slate-800 text-white" : "bg-white text-slate-800"
+      } rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300`}
     >
-      <Image
-        src={post.imageUrl}
-        alt={post.title}
-        className="w-full h-48 object-cover rounded-t-lg"
-      />
+      <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
+        <Image
+          src={post.imageUrl}
+          alt={post.title}
+          layout="fill"
+          objectFit="cover"
+          className="transition-transform transform hover:scale-110 duration-300"
+        />
+      </div>
 
       <CardTitle className="text-xl font-normal mt-4 text-center">
         {post.title}
@@ -37,18 +99,18 @@ export default function BlogCard({ post, isDarkBackground }: BlogCardProps) {
       <div className="flex flex-col items-center mt-4">
         <p
           className={`text-sm mb-2 ${
-            isDarkBackground ? 'text-slate-400' : 'text-slate-600'
+            isDarkBackground ? "text-slate-400" : "text-slate-600"
           }`}
         >
           Published on: {new Date(post.date).toLocaleDateString()}
         </p>
         <a
           href={`/posts/${post.id}`}
-          className={`w-full px-6 py-2 rounded   hover:bg-blue-500 ${
+          className={`w-full px-6 py-2 rounded transition-transform transform hover:scale-105 duration-300 ${
             isDarkBackground
-              ? 'bg-blue-600 text-white flex items-center justify-center'
-              : 'bg-blue-600 text-white flex items-center justify-center'
-          }`}
+              ? "bg-blue-600 text-white hover:bg-blue-700"
+              : "bg-blue-600 text-white hover:bg-blue-700"
+          } flex items-center justify-center`}
         >
           Read More
         </a>
