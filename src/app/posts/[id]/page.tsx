@@ -3,6 +3,7 @@ import React from 'react';
 import Commentsection from '@/components/CommentSection';
 import AuthoreCard from '@/components/AuthoreCard';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 const posts = [
   {
@@ -118,7 +119,7 @@ export default function PostDetail({ params }: { params: { id: string } }) {
       </h1>
 
       {post.image && (
-        <img
+        <Image
           src={post.image}
           alt={post.title}
           className="w-full h-auto rounded-md mt-4"

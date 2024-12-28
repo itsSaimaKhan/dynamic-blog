@@ -32,8 +32,8 @@ export default function AboutPage() {
           <p className="text-lg text-gray-600 text-center leading-relaxed">
             We believe education is the cornerstone of personal and professional
             growth. Our vision is to create a community of lifelong learners who
-            inspire each other to explore, grow, and innovate. Whether you're a
-            student, teacher, or curious individual, this platform is here to
+            inspire each other to explore grow and innovate. Whether you are a
+            student teacher or curious individual this platform is here to
             support your journey.
           </p>
         </section>

@@ -13,7 +13,7 @@ export default function Feature() {
           power of education Through this blog I aim to explore the many facets
           of learning—from the impact of innovative teaching methods to the role
           of technology in shaping the classrooms of tomorrow Education is not
-          just about textbooks and exams it's about empowering individuals
+          just about textbooks and exams its about empowering individuals
           fostering creativity and building a brighter future for communities
           worldwide I believe that education has the potential to break barriers
           open doors and inspire lifelong curiosity Whether you are a student

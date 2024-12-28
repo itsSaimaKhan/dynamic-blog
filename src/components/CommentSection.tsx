@@ -18,18 +18,23 @@ export default function Commentsection({ postId }: CommentsectionProps) {
   const [newComment, setNewComment] = useState("");
   const [authorName, setAuthorName] = useState("");
   const [editingCommentId, setEditingCommentId] = useState<string | null>(null);
+  const [error, setError] = useState("");
 
   const handleAddComment = () => {
-    if (newComment.trim() && authorName.trim()) {
-      const newCommentObj: Comment = {
-        id: new Date().toISOString(),
-        author: authorName,
-        text: newComment,
-      };
-      setComments([...comments, newCommentObj]);
-      setNewComment("");
-      setAuthorName("");
+    if (!authorName.trim() || !newComment.trim()) {
+      setError("Both name and comment are required.");
+      return;
     }
+
+    const newCommentObj: Comment = {
+      id: new Date().toISOString(),
+      author: authorName,
+      text: newComment,
+    };
+    setComments([...comments, newCommentObj]);
+    setNewComment("");
+    setAuthorName("");
+    setError(""); // Clear errors on successful addition
   };
 
   const handleEditComment = (commentID: string) => {
@@ -41,18 +46,22 @@ export default function Commentsection({ postId }: CommentsectionProps) {
     }
   };
 
-  const handlesaveEditedComment = () => {
-    if (newComment.trim() && authorName.trim() && editingCommentId) {
-      const updatedComments = comments.map((comment) =>
-        comment.id === editingCommentId
-          ? { ...comment, text: newComment, author: authorName }
-          : comment
-      );
-      setComments(updatedComments);
-      setNewComment("");
-      setAuthorName("");
-      setEditingCommentId(null);
+  const handleSaveEditedComment = () => {
+    if (!authorName.trim() || !newComment.trim()) {
+      setError("Both name and comment are required.");
+      return;
     }
+
+    const updatedComments = comments.map((comment) =>
+      comment.id === editingCommentId
+        ? { ...comment, text: newComment, author: authorName }
+        : comment
+    );
+    setComments(updatedComments);
+    setNewComment("");
+    setAuthorName("");
+    setEditingCommentId(null);
+    setError(""); // Clear errors on successful edit
   };
 
   return (
@@ -80,6 +89,7 @@ export default function Commentsection({ postId }: CommentsectionProps) {
       </div>
 
       <div className="mt-6">
+        {error && <p className="text-red-500 mb-2">{error}</p>}
         <Input
           type="text"
           value={authorName}
@@ -95,7 +105,7 @@ export default function Commentsection({ postId }: CommentsectionProps) {
           className="w-full mb-2"
         />
         <Button
-          onClick={editingCommentId ? handlesaveEditedComment : handleAddComment}
+          onClick={editingCommentId ? handleSaveEditedComment : handleAddComment}
           className="mt-4"
         >
           {editingCommentId ? "Save" : "Submit"}
