@@ -4,7 +4,7 @@ export default function Feature() {
   return (
     <div>
       <section className="py-8 bg-neutral-50 mb-40">
-        <h2 className="text-center text-3xl font-bold md:text-5xl animate-fade-in-up transition-all duration-500 ease-in-out transform hover:translate-y-[-5px] hover:text-black text-red-600">
+        <h2 className="text-center text-3xl font-bold md:text-5xl animate-fade-in-up transition-all duration-500 ease-in-out transform hover:translate-y-[-5px] hover:text-red-600 text-black">
           Saima Khan: A journey of learning, inspiration, and making education accessible for all
         </h2>
 

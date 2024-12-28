@@ -75,7 +75,7 @@ export default function BlogCard({ post, isDarkBackground }: BlogCardProps) {
   return (
     <Card
       className={`p-4 ${
-        isDarkBackground ? "bg-slate-800 text-white" : "bg-white text-slate-800"
+        isDarkBackground ? "bg-white text-black" : "bg-cyan-500 text-slate-800"
       } rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300`}
     >
       <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
@@ -108,7 +108,7 @@ export default function BlogCard({ post, isDarkBackground }: BlogCardProps) {
           href={`/posts/${post.id}`}
           className={`w-full px-6 py-2 rounded transition-transform transform hover:scale-105 duration-300 ${
             isDarkBackground
-              ? "bg-blue-600 text-white hover:bg-blue-700"
+              ? "bg-black text-white hover:bg-blue-700"
               : "bg-blue-600 text-white hover:bg-blue-700"
           } flex items-center justify-center`}
         >
