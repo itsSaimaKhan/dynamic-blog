@@ -21,7 +21,7 @@ export default function Commentsection({ postId }: CommentsectionProps) {
   const [error, setError] = useState("");
 
   const handleAddComment = () => {
-    if (!authorName.trim() || !newComment.trim()) {
+    if (newComment.trim() && authorName .trim()) {
       setError("Both name and comment are required.");
       return;
     }
